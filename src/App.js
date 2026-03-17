@@ -7,7 +7,7 @@ import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import AIChat from './screens/AIChat';
 import Data from "./TestDataPoint/Intel.js";
-import AddIntel from './screens/AddIntel';
+// import AddIntel from './screens/AddIntel';
 import { useNavigate } from 'react-router-dom';
 
 function App() {

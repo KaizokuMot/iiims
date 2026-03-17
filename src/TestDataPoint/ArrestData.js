@@ -1,5 +1,5 @@
 
-export default {
+const ArrestData = {
     arrest_data: [
        {
     caseID: 'hKm567',

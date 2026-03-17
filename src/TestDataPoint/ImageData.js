@@ -5,10 +5,10 @@ import KyatiGodfrey from "../TestDataPoint/imageData/Kyati-Godfrey.jpg";
 import LubingaEric from "../TestDataPoint/imageData/Lubinga-Eric.jpg";
 import MagumbaDerrick from "../TestDataPoint/imageData/Magumba-Derrick.jpg";
 import MrPresident from "../TestDataPoint/imageData/Mr.President.jpg";
-import RodneyMubuya from "../TestDataPoint/imageData/Rodney-Mubuya.jpg";
+// import RodneyMubuya from "../TestDataPoint/imageData/Rodney-Mubuya.jpg";
 import WanyanaDeniz from "../TestDataPoint/imageData/Wanyana-Deniz.jpg";
 
-export default {
+const ImageData = {
   imageData: [
     {
       imageUrl: KalanziDixon,

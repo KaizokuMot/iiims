@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -17,17 +17,17 @@ import {
 } from "react-router-dom";
 import HomeScreen from "./components/HomeDashboard/HomeDashboard";
 import Login from "./screens/Login";
-import Data_ from "./screens/HomeScreen"
+import DataEntryScreen from "./screens/HomeScreen"
 import SideBar from "./atoms/DashboardMain";
 import AIChat from "./screens/AIChat";
 import Data from "./TestDataPoint/Intel";
-import AddIntel from "./screens/AddIntel";
+// import AddIntel from "./screens/AddIntel";
 import FacialRecognition from "./screens/FacialRecognition";
 import Intelholder from "./atoms/Intelholder";
-import NeuralNet from "./operations/NeuralNet";
+// import NeuralNet from "./operations/NeuralNet";
 import ML from "./screens/ML";
-import AWSFaces from "./atoms/AWSFaces";
-import WebCrawler from "./screens/WebCrawler";
+// import AWSFaces from "./atoms/AWSFaces";
+// import WebCrawler from "./screens/WebCrawler";
 import SocialMedia from "./screens/SocialMedia";
 import AudioRecorder from "./screens/AudioRecorder";
 import TestSocialMedia from "./screens/TestSocialMedia";
@@ -69,7 +69,7 @@ root.render(
             <Route path="/face-recog" element={<FacialRecognition />} />
             <Route path="/view-all" element={<Intelholder />} />
             <Route path="/iiims-net" element={<ML />} />
-            <Route path="/data-entry" element={<Data_ />} />
+            <Route path="/data-entry" element={<DataEntryScreen />} />
             <Route path="/report-analysis" element={<DocumentAnalysis />} />
             <Route path="/web-crawler" element={<SocialMedia />} />
             <Route path="/audio-recorder" element={<AudioRecorder />} />

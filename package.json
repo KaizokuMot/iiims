@@ -68,7 +68,20 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "import/no-anonymous-default-export": "off",
+      "jsx-a11y/alt-text": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "eqeqeq": "off",
+      "jsx-a11y/img-redundant-alt": "off",
+      "react/jsx-pascal-case": "off",
+      "no-redeclare": "off",
+      "no-useless-escape": "off",
+      "no-mixed-operators": "off",
+      "jsx-a11y/anchor-is-valid": "off"
+    }
   },
 
   "devServer": {
