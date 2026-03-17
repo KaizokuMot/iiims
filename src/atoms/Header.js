@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Header.css"
-import Logo from "../media/logo_svg.svg"
+import Logo from "../media/logo_white.jpg"
 import SearchBar from './SearchBar'
 import UserAuthActions from './UserAuthActions'
 
