@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css'; // Updated CSS file
-import Logo from "../media/logo_svg.svg"
+import Logo from "../media/logo_white.jpg"
 import { Link } from 'react-router-dom';
 
 function Login() {
