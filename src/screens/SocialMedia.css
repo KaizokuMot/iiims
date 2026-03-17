@@ -8,6 +8,7 @@
 
 .search-header {
     margin-bottom: 2rem;
+    place-items: center;
     text-align: center;
 }
 
