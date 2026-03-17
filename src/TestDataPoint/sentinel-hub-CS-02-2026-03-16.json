@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-03-16T18:11:33.499Z",
+  "station": {
+    "id": "08694365-91af-47b2-9304-216a49e54967",
+    "name": "Gayaza Police Station",
+    "code": "CS-02",
+    "location": "Agago"
+  },
+  "personnel": [
+    {
+      "id": "b2dfa38b-4508-4bc9-8071-38bd64809208",
+      "name": "Sergeant Nandala Rahim",
+      "badge": "B-2675",
+      "status": "active"
+    }
+  ],
+  "intel": [],
+  "operations": {
+    "duties": [],
+    "reports": []
+  }
+}

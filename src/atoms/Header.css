@@ -1,0 +1,33 @@
+.header-element {
+    display: flex;
+    width: 100%;
+    color: white;
+}
+
+.logo-holder {
+    display: flex;
+    align-self: center;
+    flex: 1;
+    /* margin: 4px; */
+    text-align: left;
+}
+
+.logo {
+height: 100%;
+margin: 7px;
+width: 30%;
+
+}
+
+.search-atom {
+    width: 100%;
+    
+    /* margin: 4px; */
+    display: flex;
+    flex: 2;
+}
+
+.user-auth-actions {
+    flex: 1;
+    /* margin: 4px; */
+}

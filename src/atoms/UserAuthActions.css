@@ -1,0 +1,14 @@
+.UserAuthActions{
+    display: flex;
+    justify-content: right;
+    margin-right: 7px;
+}
+
+.chat-ic{
+    margin: 5px;
+    width: 8%;
+}
+
+.chat-ic:hover{
+    cursor: pointer;
+}

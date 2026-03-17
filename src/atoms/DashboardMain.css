@@ -1,0 +1,42 @@
+.sidenav---sidenav---_2tBP {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1006;
+  min-width: 64px;
+  background: #131a24 !important;
+  transition: min-width 0.2s;
+}
+
+.fr_ic{
+  place-self: center !important;
+ }
+
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-
+  > .sidenav---navitem---9uL5T
+  .sidenav---navicon---3gCRo
+  > *,
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-
+  > .sidenav---navitem---9uL5T
+  .sidenav---navtext---1AE_f
+  > * {
+  color: white !important;
+}
+
+.fr_ic {
+  width: 28px !important;
+}
+.side-nav-open {
+  transform: translateX(0);
+}
+
+.content {
+  transition: margin-left 0.3s ease;
+}
+
+.nav-link-area {
+  display: flex;
+}

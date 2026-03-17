@@ -1,0 +1,71 @@
+.list-item{
+    background-color: #131a24;
+    width: 100%;
+    display: flex;
+    
+    flex-direction: column;
+}
+
+.top-list-area{
+    display: inherit;
+    margin-top: 2%;
+    justify-content: space-between;
+}
+
+.location-text{
+    font-size: smaller;
+    margin-left: 2%;
+    color: gray;
+}
+
+.list-date{
+    font-size: smaller;
+    margin-right: 2%;
+    color: gray;   
+}
+
+.cases-text{
+    font-size: small;
+    font-weight: 400;
+    align-self: center;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.cases-holder{
+    border-bottom: 1px solid rgb(102, 102, 102);
+    text-align: left;
+    padding: 2%;
+    /* place-items: center; */
+    /* display: flex; */
+    justify-content: space-between;
+}
+
+.cases-desc{
+    text-align: left;
+    margin-left: 2%;
+    font-size: small;
+    margin-top: -2%;
+}
+
+.cases-posted-by{
+    text-align: left;
+    border-bottom: 1px solid rgb(48, 47, 47);
+    margin-left: 2%;
+    color: rgb(94, 94, 168);
+    font-size: small;
+    margin-top: -2%;
+}
+
+.view-all{
+    font-size: small;
+    margin-top: 2%;
+    margin-bottom: 0px;
+    color: rgb(94, 94, 168);
+    margin-right: 12px;
+}
+
+.view-all:hover{
+    cursor: pointer;
+    color: white;
+}

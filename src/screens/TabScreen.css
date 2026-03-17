@@ -1,0 +1,28 @@
+#tab-holder{
+    color: white;
+}
+/* 
+nav-fill .nav-item .nav-link, .nav-justified .nav-item .nav-link {
+    width: 200px;
+    margin: 7%;
+    background-color: #131a24;
+color: white;
+    border-radius: px;
+}
+
+.tab-content>.active {
+    display: block;
+    margin: 7%;
+}
+
+.nav-justified>.nav-link, .nav-justified .nav-item {
+    flex-basis: 0;
+    text-align: center;
+}
+ */
+
+/* 
+ .match-parent{
+    background-color: red;
+    height: 100%;
+ } */

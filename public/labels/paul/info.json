@@ -1,0 +1,11 @@
+{
+    "name": "Paul Marshall",
+    "age": "31",
+    "role": "ISO",
+    "department": "ISO",
+    "clearance": "Level 0",
+    "status": "Active",
+    "phone": "123-456-7890",
+    "email": "paul.marshall@mail.com",
+    "address": "123 Main St, Anytown, USA"
+}

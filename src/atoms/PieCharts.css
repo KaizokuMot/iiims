@@ -1,0 +1,47 @@
+.pie-sect{
+color: white;
+background-color: #131a24;
+width: 100%;
+}
+
+.activity-text{
+    border-bottom: 1px solid rgb(102, 102, 102);
+    text-align: left;
+    padding: 2%;
+    place-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recharts-legend-wrapper{
+    margin-left: 18px !important;
+}
+
+.activity-title{
+    text-align: left;
+    font-size: small;
+    margin-top: 11px;
+    font-weight: 400;
+    margin-left: 0.5em;
+}
+
+.pie-holer{
+    color: white !important;
+}
+
+.pie-section{
+    display: flex;
+    margin-bottom: -10%;
+    text-align: center;
+    text-align: -webkit-center;
+    margin-top: -10%;
+    }
+
+    .recharts-legend-wrapper{
+        position: absolute;
+        width: auto;
+        height: auto;
+        right: 0px !important;
+        top: 156.8px;
+    }
+

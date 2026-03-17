@@ -1,0 +1,12 @@
+.recents{
+    margin-top: 2%;
+    background-color: #131a24;
+}
+
+.view-all-3{
+    font-size: small;
+    margin-top: 2%;
+    margin-right: 12px;
+    margin-bottom: 1px !important;
+    color: rgb(94, 94, 168);
+}

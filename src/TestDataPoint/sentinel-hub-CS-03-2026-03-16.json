@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-03-16T18:11:33.499Z",
+  "station": {
+    "id": "e394c5ae-ac67-44ea-84ca-41ab39f2ec61",
+    "name": "Entebbe Police station",
+    "code": "CS-02",
+    "location": "Entebbe"
+  },
+  "personnel": [
+    {
+      "id": "073cb3f1-dcbc-4b88-96e2-ea74f841131e",
+      "name": "Officer Kalanzi Dixon",
+      "badge": "B-2303",
+      "status": "active"
+    },
+    {
+      "id": "03042657-4417-40a6-9dca-c6dcfaf32623",
+      "name": "Officer Andrew Muinra",
+      "badge": "B-3575",
+      "status": "active"
+    }
+  ],
+  "intel": [
+    {
+      "id": "df71abfc-2c53-4c28-bd68-f4fc9f271f8c",
+      "caseNumber": "26-9397-VAV",
+      "name": "Eric Lum",
+      "crimeType": "Robbery",
+      "status": "in-custody",
+      "bookingTime": "2026-03-17T19:33",
+      "severity": "critical"
+    },
+    {
+      "id": "0c30bb66-3b7a-4408-b222-eb3914a1e37a",
+      "caseNumber": "26-7715-IYH",
+      "name": "Kalanzi Dixon",
+      "crimeType": "Fraud",
+      "status": "in-custody",
+      "bookingTime": "2026-03-05T14:03:00.000Z",
+      "severity": "low"
+    }
+  ],
+  "operations": {
+    "duties": [
+      {
+        "id": "ecd40ac7-3ca2-4daf-a4fa-0000e0aa3b77",
+        "officerId": "073cb3f1-dcbc-4b88-96e2-ea74f841131e",
+        "shiftStart": "2026-03-17T19:17",
+        "shiftEnd": "2026-03-21T19:16",
+        "assignment": "Investigation",
+        "stationId": "e394c5ae-ac67-44ea-84ca-41ab39f2ec61",
+        "status": "on-duty"
+      }
+    ],
+    "reports": [
+      {
+        "id": "7679332f-8f13-43cc-8761-31ca24631919",
+        "reportNumber": "RPT-2026-9284",
+        "title": "Fraud",
+        "type": "arrest",
+        "authorOfficerId": "03042657-4417-40a6-9dca-c6dcfaf32623",
+        "suspectId": "0c30bb66-3b7a-4408-b222-eb3914a1e37a",
+        "crimeType": "Vandalism",
+        "content": "This is a test report",
+        "status": "draft",
+        "stationId": "e394c5ae-ac67-44ea-84ca-41ab39f2ec61",
+        "createdAt": "2026-03-16T17:06:17.800Z"
+      }
+    ]
+  }
+}

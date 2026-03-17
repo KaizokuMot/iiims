@@ -1,0 +1,82 @@
+.dash-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.holder-text {
+  font-size: small;
+  font-weight: 400;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.holder-actions {
+    font-size: small;
+    color: rgb(94, 94, 168);
+    margin-bottom: 0px;
+    margin-right: 12px;
+}
+
+.holder-actions:hover{
+    color: white ;
+
+}
+
+.holder-action-item:hover{
+    cursor: pointer;
+}
+
+.holder-action-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-arrow {
+  color: white;
+}
+
+.top-level-item {
+    border-bottom: 1px solid rgb(102, 102, 102);
+    text-align: left;
+    padding: 2%;
+    place-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-holder {
+  display: flex;
+  padding-left: 4%;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(102, 102, 102);
+}
+
+.details-holder > p {
+    color: rgb(172, 172, 172);
+
+    font-size: smaller;
+    margin-bottom: -2px;
+
+}
+
+.perp-name{
+    padding-top: 10px;
+    color: gray;
+}
+
+.arrest-date{
+    margin-bottom: 10px !important;
+}
+
+.arrest-location{
+
+}
+
+
+.span{
+    color: white;
+    font-weight: bold;
+    margin-left: 1%;
+}

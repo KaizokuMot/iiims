@@ -1,0 +1,10 @@
+.chip-top-list-area{
+        display: flex;
+        margin-top: 2%;
+        justify-content: space-between;
+    }
+
+
+    .list-holder:hover{
+        background-color: rgb(16, 12, 29);
+    }

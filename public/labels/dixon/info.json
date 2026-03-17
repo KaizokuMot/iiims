@@ -1,0 +1,11 @@
+{
+    "name": "Dixon Kalanzi",
+    "age": "31",
+    "role": "Software Engineer",
+    "department": "Engineering",
+    "clearance": "Level 3",
+    "status": "Active",
+    "phone": "123-456-7890",
+    "email": "dixon.kalanzi@example.com",
+    "address": "123 Main St, Anytown, USA"
+}

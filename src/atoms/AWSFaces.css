@@ -1,0 +1,11 @@
+.size {
+    top: 0;
+    left: 0;
+
+  }
+.face-recog-page{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: #131a24;
+}  

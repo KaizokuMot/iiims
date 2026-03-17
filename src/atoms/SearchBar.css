@@ -1,0 +1,146 @@
+.search-bar{
+background-color: red;
+width: 100%;
+display: flex;
+height: 100%;
+}
+
+
+.search-input{
+    width: 100%;
+
+}
+
+
+.icon-inner, .ionicon, svg {
+    display: block;
+    height: 100%;
+    /* width: 50% !important; */
+}
+
+/* SEARCH BAR CONTAINER */
+.search-local {
+	width: 100%;
+	max-width: 75rem;
+	display: flex;
+	align-items: center;
+	column-gap: 1rem;
+	padding-left: 2rem;
+	background: var(--white);
+	border-radius: 1rem;
+	height: auto;
+	border: 0.1rem solid var(--black);
+	border-right: none;
+}
+
+/* ICON */
+.icon {
+	color: var(--red);
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.icon:hover {
+	animation: funny-icon 0.4s ease-in-out;
+}
+
+@keyframes funny-icon {
+	0% {
+		scale: 1;
+	}
+
+	50% {
+		scale: 0.8;
+		transform-origin: bottom;
+		transform: rotate(-15deg);
+	}
+
+	100% {
+		scale: 1;
+	}
+}
+
+/* INPUT */
+.search-local .search-area {
+    height: 100%;
+    width: 100%;
+    flex: 1 1 25rem;
+    background: var(--white);
+    display: flex;
+    outline: none;
+    border: none;
+    color: #8f8d8d;
+    font-size: 1.2rem;
+}
+
+.search-area[type="text"]::placeholder {
+	color: var(--black);
+	font-size: 1rem;
+}
+
+/* BUTTON */
+.search-local .btn-serach {
+    background: #4c596a;
+    border: none;
+    border-radius: 0.2rem;
+    font-weight: 500;
+    font-size: .9rem;
+    color: white;
+    height: 2rem;
+    width: 7rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+
+}
+
+.btn-serach {
+	color: black;
+    font-size: 3rem;
+
+}
+
+
+
+.search-local .btn-serach .search-icon {
+	display: none;
+}
+
+.search-local .btn-serach:hover {
+	letter-spacing: 0.1rem;
+    background-color: black;
+color: white;
+}
+
+/* MEDIAS */
+@media (max-width: 575px) {
+	.search-local {
+		padding-left: 0;
+		column-gap: 0.25rem;
+	}
+
+	.search-local .btn-serach {
+		width: 10rem;
+	}
+
+    .search-icon {
+		display: block;
+		margin-inline: auto;
+		color: var(--white);
+		font-size: 3rem;
+	}
+
+	.search-local .btn-serach {
+		display: block;
+		margin-inline: auto;
+		color: var(--white);
+		font-size: 3rem;
+	}
+
+	.search-area[type="text"]::placeholder {
+		font-size: 1.7rem;
+	}
+}

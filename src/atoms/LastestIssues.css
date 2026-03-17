@@ -1,0 +1,62 @@
+.severe-holder{
+    background-color: #131a24 ;
+
+}
+
+.severe{
+    border-bottom: 1px solid rgb(102, 102, 102);
+
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+}
+
+.sev-title{
+    font-size: small;
+    font-weight: 400;
+    margin-top: 13px;
+    margin-left: 2%;
+}
+
+.view-all-div{
+
+}
+
+.view-all-2{
+    font-size: small;
+    margin-top: 2%;
+    margin-right: 12px;
+    margin-bottom: 1px !important;
+    color: rgb(94, 94, 168);
+}
+
+.cmi-list{
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-bottom: 1px solid rgb(70, 69, 69);
+
+}
+
+.cmi-title{
+    font-weight: 500;
+    margin-top: 2%;
+    margin-right: 3px;
+    font-size: small;
+    margin-left: 2%;  
+}
+
+.badge-info {
+    background-color:red !important;
+    color: white !important;
+    margin: 0px 1%;
+    align-self: center !important;
+}
+
+.cmi-title-2{
+    font-weight: 500;
+    margin-top: 2%;
+    align-self: center !important;
+
+    font-size: .7rem;
+}
