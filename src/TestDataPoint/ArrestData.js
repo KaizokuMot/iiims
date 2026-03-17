@@ -1,5 +1,5 @@
 
-const ArrestData = {
+export default {
     arrest_data: [
        {
     caseID: 'hKm567',
