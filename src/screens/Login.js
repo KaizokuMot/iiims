@@ -18,8 +18,8 @@ function Login() {
 
 
 <div className='logo-holder-login'>
-<img className='login-logo' src={Logo}/>
-<p className='version'>Beta ~0.011.1 ©2024</p>
+{/* <img className='login-logo' src={Logo}/> */}
+<p className='version'>Beta ~0.011.1 ©2026</p>
 </div>
       <form className='material-form'>
         <div className='form-group'>

@@ -8,7 +8,7 @@ function Header() {
     return (
         <div className='header-element'>
             <div className='logo-holder'>
-                <img className='logo' src={Logo} />
+                {/* <img className='logo' src={Logo} /> */}
             </div>
             {/* search bar */}
             <div className='search-atom'>
