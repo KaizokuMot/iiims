@@ -30,11 +30,21 @@ function nameMatches(query, name) {
   if (q === n) return true;
   if (n.includes(q)) return true;
   if (q.includes(n)) return true;
-  const qWords = q.split(/\s+/).filter(Boolean);
-  const nWords = n.split(/\s+/).filter(Boolean);
-  const overlap = qWords.filter(w => nWords.some(nw => nw.includes(w) || w.includes(nw)));
-  if (overlap.length >= Math.min(qWords.length, 1)) return true;
-  return false;
+  const qWords = q.split(/\s+/).filter(w => w.length > 1);
+  const nWords = n.split(/\s+/).filter(w => w.length > 1);
+  
+  if (qWords.length === 0) return false;
+
+  // Single word query: must match a whole word in the name
+  if (qWords.length === 1) {
+    return nWords.some(nw => nw === q || nw.startsWith(q));
+  }
+
+  // Multi-word query: require significant overlap (at least 2 words or 50% of query)
+  const overlap = qWords.filter(w => nWords.some(nw => nw === w || nw.startsWith(w)));
+  const minOverlap = Math.max(2, Math.ceil(qWords.length * 0.5));
+  
+  return overlap.length >= Math.min(qWords.length, minOverlap);
 }
 
 /**
@@ -397,9 +407,9 @@ export function isPersonSearchQuery(message) {
 
   // If it's just a greeting or common AI question, don't treat as person search
   const commonAIQuestions = [
-    'who are you', 'what are you', 'your name', 'hello', 'hi', 'hey', 
+    'who are you', 'who are u', 'who r u', 'what are you', 'your name', 'hello', 'hi', 'hey', 
     'help', 'capabilities', 'what can you do', 'tell me about yourself',
-    'how are you', 'how is it going', 'who created you'
+    'how are you', 'how is it going', 'who created you', 'what is your name'
   ];
   if (commonAIQuestions.some(q => lower.includes(q))) return false;
 

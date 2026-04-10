@@ -10,8 +10,18 @@ import { Hub } from './CentralHubService';
 
 // Direct connection to Ollama (default localhost:11434). Ollama supports CORS from browsers.
 // Use REACT_APP_OLLAMA_URL to override, e.g. for a remote server.
-const OLLAMA_BASE = process.env.REACT_APP_OLLAMA_URL || 'http://localhost:11434';
-const OLLAMA_MODEL = process.env.REACT_APP_OLLAMA_MODEL || 'iiims';
+
+const OLLAMA_BASE_DEFAULT = "https://necessitative-freeda-serologically.ngrok-free.dev";
+const OLLAMA_BASE = (() => {
+  const saved = localStorage.getItem('apiUrl');
+  if (saved && saved !== "undefined" && saved !== "null" && saved.trim() !== "") {
+    // Strip /api/chat if it's there, as endpoints will be appended later
+    return saved.replace(/\/api\/chat$/, '').replace(/\/$/, '');
+  }
+  return OLLAMA_BASE_DEFAULT.replace(/\/$/, '');
+})();
+
+let OLLAMA_MODEL = 'tyrell';
 
 /**
  * Build knowledge context from all available data sources:
@@ -20,8 +30,8 @@ const OLLAMA_MODEL = process.env.REACT_APP_OLLAMA_MODEL || 'iiims';
  * - Uploaded/analyzed documents from case_documents
  */
 
-export function ollamaModel(){
-return OLLAMA_MODEL.toString();
+export function ollamaModel() {
+  return OLLAMA_MODEL.toString();
 }
 export function buildKnowledgeContext(investigationData = null) {
 
@@ -219,7 +229,10 @@ Guidelines:
   try {
     const res = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true'
+      },
       body: JSON.stringify(body),
       signal: controller.signal
     });
@@ -245,22 +258,55 @@ Guidelines:
 
 /**
  * Check if Ollama is reachable and return status info.
+ * Following the lenient health check pattern provided by the user,
+ * but also fetching models to keep OLLAMA_MODEL dynamic.
  */
 export async function getOllamaStatus() {
   try {
-    const res = await fetch(`${OLLAMA_BASE}/api/tags`, { method: 'GET' });
-    if (res.ok) {
-      const data = await res.json();
-      const models = data.models || [];
-      const currentModel = models.find(m => m.name.includes(OLLAMA_MODEL)) || models[0];
-      return {
-        online: true,
-        model: currentModel ? currentModel.name : OLLAMA_MODEL,
-        allModels: models.map(m => m.name)
-      };
+    // 1. Connectivity Check (as per user example)
+    const healthUrl = `${OLLAMA_BASE}/api/health`;
+    const healthRes = await fetch(healthUrl, {
+      method: 'GET',
+      headers: { 'ngrok-skip-browser-warning': 'true' }
+    });
+
+    // 2. Fetch Models (to satisfy "dynamic from ollama" request)
+    const tagsUrl = `${OLLAMA_BASE}/api/tags`;
+    const tagsRes = await fetch(tagsUrl, {
+      method: 'GET',
+      headers: { 'ngrok-skip-browser-warning': 'true' }
+    });
+
+    let activeModel = OLLAMA_MODEL;
+    let availableModels = [];
+
+    if (tagsRes.ok) {
+      const data = await tagsRes.json();
+      availableModels = (data.models || []).map(m => m.name);
+      
+      if (availableModels.length > 0) {
+        // If our current model isn't in the list, switch to the first available one
+        if (!availableModels.includes(OLLAMA_MODEL)) {
+          // Look for a close match (e.g. tyrell vs tyrell:latest)
+          const match = availableModels.find(m => m.toLowerCase().includes(OLLAMA_MODEL.toLowerCase()));
+          OLLAMA_MODEL = match || availableModels[0];
+        }
+        activeModel = OLLAMA_MODEL;
+      }
     }
-    return { online: false, model: OLLAMA_MODEL };
+
+    if (healthRes.ok || tagsRes.ok) {
+      return { 
+        online: true, 
+        model: activeModel, 
+        allModels: availableModels 
+      };
+    } else {
+      console.log("Both health and tags returned non-OK, but following lenient online fallback.");
+      return { online: true, model: activeModel, warning: 'Server responded but endpoints failed' };
+    }
   } catch (err) {
+    console.error("Health check failed:", err);
     return { online: false, model: OLLAMA_MODEL, error: err.message };
   }
 }

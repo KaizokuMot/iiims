@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './AIChat.css';
 import axios from 'axios';
 import nlpLib from 'compromise';
-import { callOllamaChat, buildKnowledgeContext, checkOllamaConnection, ollamaModel } from '../services/ollamaService';
+import { callOllamaChat, buildKnowledgeContext, checkOllamaConnection, ollamaModel, getOllamaStatus } from '../services/ollamaService';
 import { searchPeople, isPersonSearchQuery, extractNameFromQuery } from '../services/peopleSearchService';
 import PersonSearchResults from '../components/PersonSearchResults';
 
@@ -480,6 +480,7 @@ const AIChat = ({ data }) => {
     lastInteractionTime: new Date()
   });
   const [ollamaAvailable, setOllamaAvailable] = useState(null); // null=checking, true/false=result
+  const [activeModel, setActiveModel] = useState('Checking...');
   const inputRef = useRef(null);
   const chatAreaRef = useRef(null); // For current chat
   const oldChatAreaRef = useRef(null); // For old chat detail
@@ -494,7 +495,14 @@ const AIChat = ({ data }) => {
 
   // Check Ollama connection on mount
   useEffect(() => {
-    checkOllamaConnection().then(ok => setOllamaAvailable(ok));
+    getOllamaStatus().then(status => {
+      setOllamaAvailable(status.online);
+      if (status.online) {
+        setActiveModel(status.model);
+      } else {
+        setActiveModel('Offline');
+      }
+    });
   }, []);
 
   // Define trainInvestigationModel function
@@ -1617,7 +1625,25 @@ I can provide more detailed analysis if you have specific questions about this t
             </div>
 
             <div className="disclaimer-text">
-              IIIMS-GPT may generate inaccurate information about people, places, or facts. Model: IIIMS-GPT v1.3
+              IIIMS-GPT may generate inaccurate information about people, places, or facts. 
+              <span className="model-status" style={{ 
+                marginLeft: '8px', 
+                color: ollamaAvailable ? '#10b981' : '#ef4444',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                fontWeight: '500'
+              }}>
+                <span style={{ 
+                  width: '8px', 
+                  height: '8px', 
+                  borderRadius: '50%', 
+                  backgroundColor: ollamaAvailable ? '#10b981' : '#ef4444',
+                  display: 'inline-block',
+                  boxShadow: ollamaAvailable ? '0 0 8px rgba(16, 185, 129, 0.4)' : 'none'
+                }}></span>
+                Model: {activeModel}
+              </span>
             </div>
           </div> {/* Closes ai-input-field */}
           {renderFileSelector()}
