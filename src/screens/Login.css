@@ -305,8 +305,9 @@
 
 /* Footer */
 .login-right-footer {
-  text-align: center;
+  text-align: left;
   font-size: 11px;
+  margin-left: 1rem;
   color: #374151;
 }
 

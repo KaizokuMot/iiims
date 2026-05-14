@@ -37,7 +37,7 @@ function Login() {
 
           <div className='login-title-block'>
             <h2 className='login-app-name'>IIIMS<sup>®</sup></h2>
-            <h1 className='login-heading'>Log In</h1>
+            {/* <h1 className='login-heading'>Log In</h1> */}
           </div>
 
           <form className='login-form' onSubmit={e => e.preventDefault()}>
@@ -101,7 +101,7 @@ function Login() {
         </div>
 
         <div className='login-right-footer'>
-          <span>© 2026 <strong>IIIMS</strong> 12.0.5</span>
+          <span>© 2026 <strong>IIIMS</strong> 12.1.5</span>
         </div>
       </div>
 
