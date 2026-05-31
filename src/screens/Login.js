@@ -11,18 +11,46 @@ function Login() {
   return (
     <div className='login-split-container'>
 
-      {/* LEFT PANEL — image + overlay text */}
+      {/* LEFT PANEL — grid + glow + triangle */}
       <div className='login-left'>
-        <div className='login-left-overlay'>
-          <div className='login-left-content'>
-            <span className='left-eyebrow'>INTEGRATED INTELLIGENCE MANAGEMENT</span>
-            <h1 className='left-headline'>
-              Clarity,<br />Precision,<br />Action.
-            </h1>
-            {/* <p className='left-sub'>v.12.05.24
-</p> */}
-       
-          </div>
+        {/* Grid lines background */}
+        <div className='login-grid-bg' />
+
+        {/* Colorful radial glow blobs */}
+        <div className='login-glow login-glow-green' />
+        <div className='login-glow login-glow-red' />
+        <div className='login-glow login-glow-blue' />
+        <div className='login-glow login-glow-yellow' />
+
+        {/* Striped triangle */}
+        <div className='login-triangle-wrap'>
+          <svg className='login-triangle-svg' viewBox='0 0 200 220' xmlns='http://www.w3.org/2000/svg'>
+            <defs>
+              <clipPath id='tri-clip'>
+                <polygon points='100,10 10,210 190,210' />
+              </clipPath>
+            </defs>
+            {Array.from({ length: 60 }, (_, i) => (
+              <line
+                key={i}
+                x1='0'
+                y1={10 + i * 3.4}
+                x2='200'
+                y2={10 + i * 3.4}
+                stroke='rgba(255,255,255,0.55)'
+                strokeWidth='0.8'
+                clipPath='url(#tri-clip)'
+              />
+            ))}
+          </svg>
+        </div>
+
+        {/* Text content */}
+        <div className='login-left-content'>
+          <span className='left-eyebrow'>INTEGRATED INTELLIGENCE MANAGEMENT</span>
+          <h1 className='left-headline'>
+            Clarity,<br />Precision,<br />Action.
+          </h1>
         </div>
       </div>
 
@@ -101,7 +129,7 @@ function Login() {
         </div>
 
         <div className='login-right-footer'>
-          <span>© 2026 <strong>IIIMS</strong> 12.1.5</span>
+          <span>© 2026 <strong>IIIMS</strong> 12.4.0</span>
         </div>
       </div>
 

@@ -83,11 +83,6 @@
       "jsx-a11y/anchor-is-valid": "off"
     }
   },
-
-  "devServer": {
-  "allowedHosts": "all"
-},
-
   "browserslist": {
     "production": [
       ">0.2%",

@@ -67,7 +67,7 @@ root.render(
             <Route path="/chat" element={<AIChat data={Data} />} />
             {/* <Route path="/add-intel" element={<AddIntel />} /> */}
             <Route path="/face-recog" element={<FacialRecognition />} />
-            <Route path="/view-all" element={<Intelholder />} />
+            <Route path="/view-all" element={<DataEntryScreen />} />
             <Route path="/iiims-net" element={<ML />} />
             <Route path="/data-entry" element={<DataEntryScreen />} />
             <Route path="/report-analysis" element={<DocumentAnalysis />} />
